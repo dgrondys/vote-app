@@ -1,0 +1,9 @@
+<nav class="hidden md:flex items-center justify-between text-gray-400 text-xs">
+    <ul class="flex uppercase font-semibold lg:border-b-4 pb-3 space-x-4 lg:space-x-11 ">
+        <li><a wire:click.prevent="setStatus('All')" href="{{ route('idea.index', ['status' => 'All']) }}" class="border-b-4 pb-3 hover:border-blue @if ($status === 'All') border-blue text-gray-900 @endif">Wszystkie pomysły ({{ $statusCount['all_statuses'] }})</a></li>
+        <li><a wire:click.prevent="setStatus('Otwarte')" href="{{ route('idea.index', ['status' => 'Otwarte']) }}" class=" transition duration-150 ease-in border-b-4 pb-3 hover:border-blue @if ($status === 'Otwarte') border-blue text-gray-900 @endif">Otwarte ({{ $statusCount['otwarte'] }})</a></li>
+        <li><a wire:click.prevent="setStatus('W trakcie')" href="{{ route('idea.index', ['status' => 'W trakcie']) }}" class=" transition duration-150 ease-in border-b-4 pb-3 hover:border-blue @if ($status === 'W trakcie') border-blue text-gray-900 @endif">W trakcie ({{ $statusCount['w_trakcie'] }})</a></li>
+        <li><a wire:click.prevent="setStatus('Ukończone')" href="{{ route('idea.index', ['status' => 'Ukończone']) }}" class=" transition duration-150 ease-in border-b-4 pb-3 hover:border-blue @if ($status === 'Ukończone') border-blue text-gray-900 @endif">Ukończone ({{ $statusCount['ukończone'] }})</a></li>
+        <li><a wire:click.prevent="setStatus('Porzucone')" href="{{ route('idea.index', ['status' => 'Porzucone']) }}" class=" transition duration-150 ease-in border-b-4 pb-3 hover:border-blue @if ($status === 'Porzucone') border-blue text-gray-900 @endif">Porzucone ({{ $statusCount['porzucone'] }})</a></li>
+    </ul>
+</nav>
